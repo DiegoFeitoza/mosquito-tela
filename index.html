@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Mosquitos</title>
+
+
+	<style type="text/css" media="screen">
+		.r1, .r2, .r3, .r4, .r5, .r6, .r7, .r8, .r9, .r10, .r11, .r12, .r13, .r14, .r15{
+			width: 35px;
+			height:35px;
+			background:url('src/img/mosquito.png');
+			
+
+			position:fixed;
+			clear: both;
+			background-size: 100% 100%;
+			top: -50px;
+			left: -80px;
+			transition: all 0.5s;
+		}
+
+		.l1, .l2, .l3, .l4, .l5, .l6, .l7, .l8, .l9, .l10, .l11, .l12, .l13, .l14, .l15{
+			width: 35px;
+			height:35px;
+			background:url('src/img/mosquito-left.png');
+			position:fixed;
+			clear: both;
+			background-size: 100% 100%;
+			top: -50px;
+			left: -80px;
+			transition: all 0.5s;
+		}
+
+		@media (max-device-width:361px) {
+			.r1, .r2, .r3, .r4, .r5, .r6, .r7, .r8, .r9, .r10, .r11, .r12, .r13, .r14, .r15{
+				
+				width: 90px;
+				height: 90px;
+			}
+			.l1, .l2, .l3, .l4, .l5, .l6, .l7, .l8, .l9, .l10, .l11, .l12, .l13, .l14, .l15{
+				width: 90px;
+				height: 90px;
+			}	
+		}
+
+		@media (min-device-width: 362px) and (max-device-width: 730px){
+			.r1, .r2, .r3, .r4, .r5, .r6, .r7, .r8, .r9, .r10, .r11, .r12, .r13, .r14, .r15{
+				
+				width: 40px;
+				height: 40px;
+			}
+			.l1, .l2, .l3, .l4, .l5, .l6, .l7, .l8, .l9, .l10, .l11, .l12, .l13, .l14, .l15{
+				width: 40px;
+				height: 40px;
+			}	
+		}
+
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class='r1'></div>
+	<div class='r2'></div>
+	<div class='r3'></div>
+	<div class='r4'></div>
+	<div class='r5'></div>
+	<div class='r6'></div>
+	<div class='r7'></div>
+	<div class='r8'></div>
+	<div class='r9'></div>
+	<div class='r10'></div>
+	<div class='r11'></div>
+	<div class='r12'></div>
+	<div class='r13'></div>
+	<div class='r14'></div>
+	<div class='r15'></div>
+
+	<div class='l1'></div>
+	<div class='l2'></div>
+	<div class='l3'></div>
+	<div class='l4'></div>
+	<div class='l5'></div>
+	<div class='l6'></div>
+	<div class='l7'></div>
+	<div class='l8'></div>
+	<div class='l9'></div>
+	<div class='l10'></div>
+	<div class='l11'></div>
+	<div class='l12'></div>
+	<div class='l13'></div>
+	<div class='l14'></div>
+	<div class='l15'></div>
+
+	<script type="text/javascript">
+		var virou = false;
+
+		$(document).ready(function(){
+			$('.r1').mouseover(function(){recolher(this)});
+			$('.r2').mouseover(function(){recolher(this)});
+			$('.r3').mouseover(function(){recolher(this)});
+			$('.r4').mouseover(function(){recolher(this)});
+			$('.r5').mouseover(function(){recolher(this)});
+			$('.r6').mouseover(function(){recolher(this)});
+			$('.r7').mouseover(function(){recolher(this)});
+			$('.r8').mouseover(function(){recolher(this)});
+			$('.r9').mouseover(function(){recolher(this)});
+			$('.r10').mouseover(function(){recolher(this)});
+			$('.r11').mouseover(function(){recolher(this)});
+			$('.r12').mouseover(function(){recolher(this)});
+			$('.r13').mouseover(function(){recolher(this)});
+			$('.r14').mouseover(function(){recolher(this)});
+			$('.r15').mouseover(function(){recolher(this)});
+
+
+			$('.l1').mouseover(function(){recolher(this)});
+			$('.l2').mouseover(function(){recolher(this)});
+			$('.l3').mouseover(function(){recolher(this)});
+			$('.l4').mouseover(function(){recolher(this)});
+			$('.l5').mouseover(function(){recolher(this)});
+			$('.l6').mouseover(function(){recolher(this)});
+			$('.l7').mouseover(function(){recolher(this)});
+			$('.l8').mouseover(function(){recolher(this)});
+			$('.l9').mouseover(function(){recolher(this)});
+			$('.l10').mouseover(function(){recolher(this)});
+			$('.l11').mouseover(function(){recolher(this)});
+			$('.l12').mouseover(function(){recolher(this)});
+			$('.l13').mouseover(function(){recolher(this)});
+			$('.l14').mouseover(function(){recolher(this)});
+			$('.l15').mouseover(function(){recolher(this)});
+		});
+
+
+		function animaFull(){
+			animateDiv('.r1');
+			animateDiv('.r2');
+			animateDiv('.r3');
+			animateDiv('.r4');
+			animateDiv('.r5');			
+			animateDiv('.r6');			
+			animateDiv('.r7');			
+			animateDiv('.r8');			
+			animateDiv('.r9');			
+			animateDiv('.r10');		
+			animateDiv('.r11');		
+			animateDiv('.r12');		
+			animateDiv('.r13');		
+			animateDiv('.r14');		
+			animateDiv('.r15');
+
+
+			animateDiv('.l1');
+			animateDiv('.l2');
+			animateDiv('.l3');
+			animateDiv('.l4');
+			animateDiv('.l5');			
+			animateDiv('.l6');			
+			animateDiv('.l7');			
+			animateDiv('.l8');			
+			animateDiv('.l9');			
+			animateDiv('.l10');			
+			animateDiv('.l11');			
+			animateDiv('.l12');			
+			animateDiv('.l13');			
+			animateDiv('.l14');			
+			animateDiv('.l15');
+		}
+
+		function recolheFull(){
+			recolher('.r1');
+			recolher('.r2');
+			recolher('.r3');
+			recolher('.r4');
+			recolher('.r5');
+			recolher('.r6');
+			recolher('.r7');
+			recolher('.r8');
+			recolher('.r9');
+			recolher('.r10');
+			recolher('.r11');
+			recolher('.r12');
+			recolher('.r13');
+			recolher('.r14');
+			recolher('.r15');
+
+			recolher('.l1');
+			recolher('.l2');
+			recolher('.l3');
+			recolher('.l4');
+			recolher('.l5');
+			recolher('.l6');
+			recolher('.l7');
+			recolher('.l8');
+			recolher('.l9');
+			recolher('.l10');
+			recolher('.l11');
+			recolher('.l12');
+			recolher('.l13');
+			recolher('.l14');
+			recolher('.l15');
+		}
+
+		function makeNewPosition(){
+
+		    // Get viewport dimensions (remove the dimension of the div)
+		    var h = $(window).height() - 100;
+		    var w = $(window).width() - 100;
+		    
+		    var nh = Math.floor(Math.random() * h); //Retorna o inteiro do decimal
+		    var nw = Math.floor(Math.random() * w); //Retorna o inteiro do decimal
+		    
+		    return [nh,nw];    
+    
+		}
+
+		function animateDiv(div){
+			if(virou){
+				$(div).css({"transform": "rotate(360deg)", "-ms-transform": "rotate(360deg)", "-webkit-transform": "rotate(360deg)"});
+			}
+			var novoLocal = makeNewPosition();
+
+			$(div).animate({ top: novoLocal[0], left: novoLocal[1] }, 1000);
+		}
+
+		function recolher(div){	
+			var distancia = $(div).offset();
+
+			$(div).css({"transform": "rotate(180deg)", "-ms-transform": "rotate(180deg)", "-webkit-transform": "rotate(180deg)"});
+			virou = true;
+			$(div).animate({ top: distancia.top-10}, 500);
+
+			window.setTimeout(function(){		
+				$(div).animate({ top: $(window).height()-20}, 500);
+			},500);
+		}
+
+		function zerar(div){
+			var distancia = $(div).offset();
+
+			$(div).animate({ left: distancia.left-20}, 500);
+		}
+
+
+</script>
+</body>
+</html>
